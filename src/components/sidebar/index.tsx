@@ -20,9 +20,9 @@ const MenuOptions = (props: Props) => {
   const pathName = usePathname();
 
   return (
-    <nav className=" dark:bg-black h-[100vh] overflow-auto  justify-between flex items-center flex-col  gap-10 py-6 px-4">
+    <nav className=" dark:bg-black h-[100vh] overflow-x-hidden  justify-between flex items-center flex-col  gap-10 py-6 px-4">
       <div className="flex items-center justify-center flex-col gap-8">
-        <Link className="flex font-bold flex-row " href="/">
+        <Link className="flex font-bold flex-row text-lg" href="/">
           Flowtrace
         </Link>
         <TooltipProvider>

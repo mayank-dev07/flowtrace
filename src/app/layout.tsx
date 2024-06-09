@@ -7,6 +7,7 @@ const poppins = Poppins({ weight: ["200", "400"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Flow Trace",
+  icons: "/flowtraceLogo.png",
   description: "Automate your workflow",
 };
 
