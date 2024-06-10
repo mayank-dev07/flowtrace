@@ -22,6 +22,7 @@ const UploadCareButton = ({ onUpload }: Props) => {
     });
     router.refresh();
   };
+
   return (
     <div>
       <FileUploaderRegular
