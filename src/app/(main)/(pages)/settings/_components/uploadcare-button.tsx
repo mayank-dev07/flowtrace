@@ -8,19 +8,21 @@ import "@uploadcare/react-uploader/core.css";
 type Props = {
   onUpload: (url: string) => any;
 };
-const UploadCareButton = ({ onUpload }: Props) => {
+
+const UploadCareButton: React.FC<Props> = ({ onUpload }) => {
   const router = useRouter();
-  const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
+  const [files, setFiles] = useState<any[]>([]);
 
   const handleChangeEvent = (items: any) => {
-    const successfulFiles = items.files.filter(
-      (file: any) => file.state === "uploaded"
+    const successfulFiles = items.allEntries.filter(
+      (file: any) => file.status === "success"
     );
-    setUploadedFiles(successfulFiles.map((file: any) => file.cdnUrl));
+    setFiles(successfulFiles);
+
     successfulFiles.forEach((file: any) => {
       onUpload(file.cdnUrl);
+      router.refresh();
     });
-    router.refresh();
   };
 
   return (
@@ -28,12 +30,12 @@ const UploadCareButton = ({ onUpload }: Props) => {
       <FileUploaderRegular
         onChange={handleChangeEvent}
         pubkey="03b82bb84799d14a75ff"
+        imgOnly={true}
       />
-
       <div>
-        {uploadedFiles.map((url, index) => (
-          <div key={index}>
-            <img src={url} alt={`Uploaded ${index + 1}`} />
+        {files.map((file: any) => (
+          <div key={file.uuid}>
+            <img src={file.cdnUrl} alt={file.fileInfo.originalFilename} />
           </div>
         ))}
       </div>

@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-// import UploadCareButton from "./uploadcare-button";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -29,8 +28,8 @@ const ProfilePicture = ({ userImage, onDelete, onUpload }: Props) => {
       <div className="flex h-[30vh] flex-col items-center justify-center">
         {userImage ? (
           <>
-            <div className="relative h-full w-1/12">
-              <Image src="/1.png" alt="User_Image" fill />
+            <div className="relative h-full transform object-cover aspect-square">
+              <Image src={userImage} alt="User_Image" fill />
             </div>
             <Button
               onClick={onRemoveProfileImage}
