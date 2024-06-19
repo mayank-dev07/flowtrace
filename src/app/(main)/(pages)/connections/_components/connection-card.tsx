@@ -26,7 +26,7 @@ const ConnectionCard = ({
   connected,
 }: Props) => {
   return (
-    <Card className="flex w-full items-center justify-between">
+    <Card className="flex flex-col md:flex-row w-full items-center justify-between">
       <CardHeader className="flex flex-col gap-4">
         <div className="flex flex-row gap-2">
           <Image
@@ -48,7 +48,7 @@ const ConnectionCard = ({
             Connected
           </div>
         ) : ( */}
-        <Link
+        {/* <Link
           href={
             title == "Discord"
               ? process.env.NEXT_PUBLIC_DISCORD_REDIRECT!
@@ -59,9 +59,9 @@ const ConnectionCard = ({
               : "#"
           }
           className=" rounded-lg bg-primary p-2 font-bold text-primary-foreground"
-        >
-          Connect
-        </Link>
+        > */}
+        Connect
+        {/* </Link> */}
         {/* )} */}
       </div>
     </Card>

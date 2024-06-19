@@ -36,9 +36,9 @@ export default function Home() {
         </div>
       </section>
       <InfiniteMovingCards items={clients} direction="right" speed="slow" />
-      <section className="w-screen">
+      {/* <section className="w-screen">
         <HeroParallax products={products} />
-      </section>
+      </section> */}
       <section className="w-screen h-full">
         <LampComponent />
       </section>

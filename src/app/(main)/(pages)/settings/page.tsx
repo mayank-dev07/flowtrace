@@ -60,7 +60,7 @@ const Settings = async (props: Props) => {
           <span>Settings</span>
         </h1>
         <div className=" overflow-auto h-[85vh] pb-14 md:pb-8 px-8">
-          <div>
+          <div className="pb-4">
             <h2 className="text-2xl font-bold">User Profile</h2>
             <p className="text-base text-white/50">
               Add or update your information
